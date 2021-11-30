@@ -1,0 +1,9 @@
+<div class="mainDiv">
+    <input #inputText class="m-4" type="text" value=""/> <button (click)="addItem(inputText)">Add Item</button>
+    <ul style="list-style: none;">
+        <li *ngFor='let item of todoList | async'>
+            {{item.name}}
+            <button (click)="removeItem(item)">Remove</button>
+        </li>
+    </ul>
+</div>

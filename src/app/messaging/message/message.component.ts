@@ -1,7 +1,8 @@
 import { NgRedux, select } from '@angular-redux/store';
 import { Component } from '@angular/core';
-import { DECREMENT, INCREMENT } from '../../action'
-import { IAppState } from '../../store';
+import { IAppState } from 'src/app/store';
+import { DECREMENT, INCREMENT } from '../action'
+
 
 @Component({
   selector: 'message',
@@ -9,7 +10,7 @@ import { IAppState } from '../../store';
   styleUrls: ['./message.component.css']
 })
 export class MessageComponent {
-  @select('counter') countOfClick: any;
+  @select((s: IAppState) => s.messaging.newMessages) newMessages: any;
   constructor(private ngRedux: NgRedux<IAppState>) {}
 
   Increment() {

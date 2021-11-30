@@ -1,0 +1,11 @@
+<div class="mainDiv">
+  <div class="h-25 pt-2">
+    <span class="m-4">Last Update- {{lastUpdateDate| async | date:'medium' }}</span>
+  </div>
+  <div class="h-25">
+    <span class="m-4">Total Items- {{ todoItemCount | async }}</span>
+  </div>
+  <div class="h-50">
+   <button class="m-4" (click)="removeAll()">Remove All</button>
+  </div>
+</div>
